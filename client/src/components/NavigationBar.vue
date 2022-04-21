@@ -25,11 +25,14 @@ export default {
 
 <template>
   <header class="header navbar sticky-top">
-    <h1 class="logo"><a href="#">Flexbox</a></h1>
+    <img src="../assets/Logo_Cheese_Kimbap-removebg-preview.png" alt="" />
     <ul class="main-nav">
       <li><RouterLink to="/">Home</RouterLink></li>
       <li>
         <RouterLink v-if="isLoggedIn" to="/watchlist">My Watchlist</RouterLink>
+      </li>
+      <li>
+        <RouterLink to="/omdb">Find On Omdb</RouterLink>
       </li>
       <li><RouterLink v-if="!isLoggedIn" to="/login">Login</RouterLink></li>
       <li><a v-if="isLoggedIn" @click.prevent="logout" href="#">Logout</a></li>
@@ -61,6 +64,11 @@ a {
 
 a {
   text-decoration: none;
+}
+
+header img {
+  width: 5%;
+  height: 5%;
 }
 
 .logo {
@@ -101,7 +109,7 @@ a {
   border-radius: 5px;
 }
 
-/* ================================= 
+/* =================================
   Media Queries
 ==================================== */
 

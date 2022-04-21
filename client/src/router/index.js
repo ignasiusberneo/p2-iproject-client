@@ -4,6 +4,7 @@ import HomePage from "../views/HomePage.vue";
 import LoginRegisterPage from "../views/LoginRegisterPage.vue";
 import DetailPage from "../views/DetailPage.vue";
 import WatchlistPage from "../views/WatchlistPage.vue";
+import OmdbPage from "../views/OmdbPage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -27,6 +28,11 @@ const router = createRouter({
       path: "/watchlist",
       name: "watchlist",
       component: WatchlistPage,
+    },
+    {
+      path: "/omdb",
+      name: "omdb",
+      component: OmdbPage,
     },
   ],
 });

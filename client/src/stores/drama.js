@@ -7,7 +7,6 @@ export const useDramaStore = defineStore({
     baseUrl: "http://localhost:3000",
     page: 1,
     isLoggedIn: false,
-    name: "",
   }),
   getters: {
     doubleCount: (state) => state.counter * 2,
@@ -46,6 +45,9 @@ export const useDramaStore = defineStore({
       return axios.get(`${this.baseUrl}/dramas/watchlist`, {
         headers: { access_token: localStorage.access_token },
       });
+    },
+    axiosGetOmdb(data) {
+      return axios.post(`${this.baseUrl}/dramas/omdb`, data);
     },
   },
 });

@@ -47,21 +47,6 @@ export default {
 <template>
   <h1>Drama List</h1>
 
-  <div class="input-group search-bar my-5">
-    <div class="form-outline">
-      <input
-        placeholder="search by name.."
-        v-model="name"
-        type="search"
-        id="form1"
-        class="form-control"
-      />
-    </div>
-    <button @click.prevent="getDramas" type="button" class="btn btn-primary">
-      Search
-    </button>
-  </div>
-
   <div class="row justify-content-start">
     <div
       @click.prevent="seeDetail(drama.id)"

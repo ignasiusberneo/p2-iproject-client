@@ -1,5 +1,5 @@
 <script>
-import { mapActions } from "pinia";
+import { mapActions, mapState } from "pinia";
 import { useDramaStore } from "../stores/drama";
 import CommentSpace from "../components/CommentSpace.vue";
 export default {
@@ -15,6 +15,9 @@ export default {
   },
   components: {
     CommentSpace,
+  },
+  computed: {
+    ...mapState(useDramaStore, ["isLoggedIn"]),
   },
   methods: {
     ...mapActions(useDramaStore, [
@@ -77,7 +80,7 @@ export default {
 <template>
   <main>
     <h2>{{ dramaDetail.title }}</h2>
-    <button @click="addWatchlist" class="btn btn-primary">
+    <button v-if="isLoggedIn" @click="addWatchlist" class="btn btn-primary">
       Add to Watchlist
     </button>
 
@@ -99,7 +102,7 @@ export default {
   <div class="youtube-player">
     <iframe width="420" height="315" :src="youtubeUrl"> </iframe>
   </div>
-  <form class="comment-form">
+  <form v-if="isLoggedIn" class="comment-form">
     <textarea
       v-model="commentData.comment"
       cols="70"

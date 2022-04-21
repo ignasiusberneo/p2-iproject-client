@@ -4,7 +4,7 @@ import axios from "axios";
 export const useDramaStore = defineStore({
   id: "drama",
   state: () => ({
-    baseUrl: "http://localhost:3000",
+    baseUrl: "https://cheese-kimbap.herokuapp.com",
     page: 1,
     isLoggedIn: false,
   }),
